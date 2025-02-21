@@ -19,7 +19,7 @@ const CreatePlaylistModal = ({closeModal}) => {
     }
     return (
         <div 
-            className="absolute bg-black w-screen h-screen bg-opacity-50 flex justify-center items-center"
+            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
             onClick={closeModal}
         >
             <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black w-1/3 rounded-md p-4"
