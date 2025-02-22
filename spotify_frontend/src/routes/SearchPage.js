@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LoggedInContainer from "../containers/LoggedInContainer";
 import {Icon} from '@iconify/react';
 import { makeAuthenticatedGETRequest } from "../utils/serverHelpers";
@@ -7,6 +7,14 @@ const SearchPage = () => {
     const [isInputFocused, setIsInputFocused] = useState(false);
     const [searchText, setSearchText] = useState("");
     const [songData, setSongData] = useState([]);
+
+      useEffect(() => {
+        if (searchText.trim() !== "") {
+            searchSong();
+        } else {
+            setSongData([]);
+        }
+    }, [searchText]);
 
     const searchSong = async () => {
         // This function will call the search API
