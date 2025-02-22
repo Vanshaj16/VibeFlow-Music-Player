@@ -48,7 +48,7 @@ router.get("/get/songname/:songName", passport.authenticate("jwt", {session: fal
     const {songName} = req.params;
     // name: songName --> exact name matching. Vanilla, Vanila
     // Pattern Matching instead of direct name matching.[For pattern matching we use req.query instead of req.body]
-    const songs = await Song.find({name: songName}).populate("artist");
+    const songs = await Song.find({name: { $regex: songName, $options: "i" }}).populate("artist");
     return res.status(200).json({data: songs});
 
     // const {songName} = req.query;
