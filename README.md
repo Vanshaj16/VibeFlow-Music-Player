@@ -1,6 +1,6 @@
-# Spotify Clone
+# VibeFlow
 ## Project Overview
-This project is a Spotify Clone, a web application that mimics the core functionalities of Spotify, allowing users to register, log in, upload songs, create playlists, and search for music. The project is divided into two main parts: the backend and the frontend.
+This project is a web music application allowing users to register, log in, upload songs, create playlists, and search for music using AI recommendation technology. The project is divided into two main parts: the backend and the frontend.
 ## Features
 1. User Authentication (Registration and Login)
 2. JWT Authentication
@@ -19,8 +19,8 @@ This project is a Spotify Clone, a web application that mimics the core function
 ## Setup Instructions
 ### Clone the Repository
 ```
-git clone https://github.com/yourusername/spotify-clone.git
-cd spotify-clone
+git clone https://github.com/yourusername/VibeFlow-Music-Player.git
+cd VibeFlow-Music-Player
 ```
 ### Set Up MongoDB Atlas
  1. Go to MongoDB Atlas and sign up for an account.
@@ -35,7 +35,7 @@ cd spotify-clone
  1. Go to Cloudinary and sign up for an account.
  2. Get your Cloudinary cloud name, API key, and API secret from the Cloudinary dashboard.
 ### Configure Environment Variables
-Create a .env file in the spotify_backend directories with the following content:
+Create a .env file in the backend directories with the following content:
 ```
 MONGO_PASSWORD=your_mongo_password
 SECRET_KEY=your_jwt_secret
@@ -48,23 +48,23 @@ export const cloudinary_upload_preset = "your_upload_preset";
 ### Install Dependencies
 Backend
 ```
-cd spotify_backend
+cd backend
 npm install
 ```
 
 Frontend
 ```
-cd ../spotify_frontend
+cd ../frontend
 npm install
 ```
 ### Run the Backend Server
 ```
-cd spotify_backend
+cd backend
 node index.js
 ```
 ### Run the Frontend Server
 ```
-cd ../spotify_frontend
+cd ../frontend
 npm start
 ```
 This will start the frontend development server. Open http://localhost:3000 to view it in your browser.

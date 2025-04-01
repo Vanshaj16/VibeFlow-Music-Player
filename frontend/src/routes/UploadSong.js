@@ -30,7 +30,7 @@ const UploadSong = () => {
             <div className="text-2xl font-semibold mb-5 text-white mt-8">
             Upload Your Music
         </div>
-            <div className="w-2/3 flex space-x-3">
+            <div className="w-2/3 flex space-x-5">
                 <div className="w-1/2">
                     <TextInput 
                         label="Name"
@@ -50,7 +50,7 @@ const UploadSong = () => {
                     />
                 </div>
             </div>
-            <div className="py-5">
+            <div className="py-8 flex space-x-8">
                 {uploadedSongFileName ? (
                     <div className="bg-white rounded-full p-3 w-1/3">
                         {uploadedSongFileName.substring(0, 35)}...
@@ -61,10 +61,11 @@ const UploadSong = () => {
                         setName={setUploadedSongFileName}
                     />
                 )}
+                <div className="bg-white w-40 flex items-center justify-center p-4 rounded-full cursor-pointer font-semibold" onClick={submitSong}>
+                    Upload Track
+                </div>
             </div>
-            <div className="bg-white w-40 flex items-center justify-center p-4 rounded-full cursor-pointer font-semibold" onClick={submitSong}>
-                Submit Song
-            </div>
+            
     </LoggedInContainer>
     );
 };

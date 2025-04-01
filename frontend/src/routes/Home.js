@@ -1,4 +1,5 @@
-import spotify_logo from '../assets/images/spotify_logo_white.svg';
+import Vibeflow_icon from '../assets/images/Vibeflow_icon1.png';
+import Vibeflow from '../assets/images/Vibeflow.png';
 import IconText from '../components/shared/IconText';
 import SidebarText from '../components/shared/SidebarText';
 import TextWithHover from '../components/shared/TextWithHover';
@@ -152,8 +153,9 @@ const Home = () => {
             <div className="h-full w-1/5 bg-black flex flex-col justify-between pb-10">
                 <div>
                     {/* This div is for logo */}
-                    <div className="logoDiv p-6">
-                        <img src={spotify_logo} alt="spotify logo" width={125}/>
+                    <div className="logoDiv item center justify center p-6 px-18">
+                        <div className="px-3"><img src={Vibeflow_icon} alt="vibeflow icon" width={80}/></div>
+                        <img src={Vibeflow} alt="vibeflow" width={115}/>
                     </div>
                     <div className="py-5 text-sm">
                         <IconText 
