@@ -4,11 +4,12 @@ This project is a web music application allowing users to register, log in, uplo
 ## Features
 1. User Authentication (Registration and Login)
 2. JWT Authentication
-3. Song Management (Upload, View)
-4. Playlist Management (Create, View, Add Songs)
-5. Music Playback
-6. Search Functionality
-7. Responsive Design
+3. AI Search recommendation feature.
+4. Song Management (Upload, View)
+5. Playlist Management (Create, View, Add Songs)
+6. Music Playback
+7. Search Functionality
+8. Responsive Design
 ## Technologies Used
 1. Backend: Node.js, Express.js, MongoDB, Mongoose, Passport.js, JWT
 2. Frontend: React, Tailwind CSS, Howler.js, Cloudinary, React Router, React Cookie
