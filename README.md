@@ -93,4 +93,5 @@ This will start the frontend development server. Open http://localhost:3000 to v
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 ## Author 
 Name: Vanshaj
+
 Email: vanshajsen16@gmail.com
