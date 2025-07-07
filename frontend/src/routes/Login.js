@@ -14,7 +14,7 @@ const LoginComponent = () => {
     const navigate = useNavigate();
 
     const login = async () => {
-        const data = {email, password};
+        const data = {identifier: email, password};
         const response = await makeUnauthenticatiatedPOSTRequest(
             "/auth/login",
             data
@@ -54,7 +54,7 @@ const LoginComponent = () => {
                 value={password}
                 setValue={setPassword}
             />
-            <div className="w-full flex items-center justify-end my-8">
+            <div className="w-full flex items-center justify-center my-8">
                 <button className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-600 p-3 px-10 rounded-full" 
                     onClick={(e) => {
                         e.preventDefault();
