@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import CreatePlaylistModal from '../modals/CreatePlaylistModal';
 import AddToPlaylistModal from '../modals/AddToPlatlistModal';
 import { makeAuthenticatedPOSTRequest } from '../utils/serverHelpers';
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const LoggedInContainer = ({children, curActiveScreen}) => {
     const [CreatePlaylistModalOpen, setCreatePlaylistModalOpen] = useState(false);
@@ -87,6 +89,13 @@ const LoggedInContainer = ({children, curActiveScreen}) => {
             pauseSound(); 
             setIsPaused(true);  
         }
+    };
+    const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        removeCookie("token", { path: "/" });
+        navigate("/login");
     };
     return( 
         <div className="h-full w-full bg-app-black">
@@ -170,6 +179,14 @@ const LoggedInContainer = ({children, curActiveScreen}) => {
                         <div className="border border-gray-100 text-white w-2/5 flex px-2 py-1 rounded-full items-center justify-center hover:border-white cursor-pointer">
                             <Icon icon="mingcute:earth-2-line"/>
                             <div className="ml-2 text-sm font-semibold">English</div>
+                        </div>
+                        {/* Logout button */}
+                        <div
+                            className="border border-gray-100 text-white w-2/5 flex px-2 py-1 rounded-full items-center justify-center hover:border-white cursor-pointer mt-4"
+                            onClick={handleLogout}
+                        >
+                            <Icon icon="mdi:logout" />
+                            <div className="ml-2 text-sm font-semibold">Logout</div>
                         </div>
                     </div>
                 </div>
