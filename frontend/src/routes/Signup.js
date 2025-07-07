@@ -14,7 +14,7 @@ const SignupComponent = () => {
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [cookie, setCookie] = useCookies(["token"]);
+    // const [cookie, setCookie] = useCookies(["token"]);
     const navigate = useNavigate();
 
     const signUp = async () => {
@@ -27,15 +27,15 @@ const SignupComponent = () => {
             "/auth/register",
             data
         );
-        if(response && !response.err){
-            const token = response.token;
-            const date = new Date();
-            date.setDate(date.getDate() + 30)
-            setCookie("token", token, {path:"/", expires: date});
+        if(response && !response.err && !response.error){
+            // const token = response.token;
+            // const date = new Date();
+            // date.setDate(date.getDate() + 30)
+            // setCookie("token", token, {path:"/", expires: date});
             alert("Account created successfully");
-            navigate("/home");
+            navigate("/login");
         }else{
-            alert("Error creating account");
+            alert(response?.error || response?.err || "Error creating account");
         }
     };
     return(
