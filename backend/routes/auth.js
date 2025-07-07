@@ -43,10 +43,12 @@ router.post("/register", async (req,res) => {
 
 router.post("/login", async (req,res) =>{
     // Step 1 : Get email and password sent by user from req.body
-    const {email, password} = req.body;
+    const {identifier, password} = req.body;
 
     // Step 2 : Check if a user with the given email exists. If not, the credentials is invalid.
-    const user = await User.findOne({email: email});
+    const user = await User.findOne({
+        $or: [{email: identifier}, {username:identifier}]
+});
     if(!user){
         console.log("User not found");
         return res.status(403).json({err: "Invalid credentials"});
