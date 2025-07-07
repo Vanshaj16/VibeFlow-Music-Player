@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {useCookies} from "react-cookie";
 import Vibeflow_icon from '../assets/images/Vibeflow_icon1.png';
 import Vibeflow from '../assets/images/Vibeflow.png';
 import TextInput from "../components/shared/TextInput";
@@ -14,7 +13,6 @@ const SignupComponent = () => {
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    // const [cookie, setCookie] = useCookies(["token"]);
     const navigate = useNavigate();
 
     const signUp = async () => {
@@ -28,10 +26,6 @@ const SignupComponent = () => {
             data
         );
         if(response && !response.err && !response.error){
-            // const token = response.token;
-            // const date = new Date();
-            // date.setDate(date.getDate() + 30)
-            // setCookie("token", token, {path:"/", expires: date});
             alert("Account created successfully");
             navigate("/login");
         }else{
